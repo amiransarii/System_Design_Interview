@@ -1,0 +1,167 @@
+#1. No SQL: originally referring to non SQL or non relational is a database that provides a mechanism for storage and retrieval of data. This data is modeled in means other 
+than the tabular relations used in relational database. . NoSQL databases are used in real-time web applications and big data and their use are increasing
+over time. NoSQL systems are also sometimes called 'Not only SQL' to emphasize the fact that they may support SQL-like query languages.
+
+A NoSQL database includes simplicity of design, simpler horizontal scaling to clusters of machines and finer control over availability.
+---Advantages of NoSQL:
+There are many advantages of working with NoSQL databases such as MongoDB and Cassandra. The main advantages are high scalability and high availability.
+----High scalability: NoSQL database use sharding for horizontal scaling. Partitioning of data and placing it 
+on multiple machines in such a way that the order of the data is preserved is sharding. Examples of horizontal scaling databases are MongoDB, Cassandra etc. NoSQL can handle 
+huge amount of data because of scalability, as the data grows NoSQL scale itself to handle that data in efficient manner.
+---High availability :Auto replication feature in NoSQL databases makes it highly available because in case of any failure data replicates itself to the previous consistent state
+
+Types of NoSQL database:
+1. MongoDB falls in the category of NoSQL document based database.
+2. Key value store: Memcached, Redis, Coherence
+3. Tabular: Hbase, Big Table, Accumulo
+4. Document based: MongoDB, CouchDB, Cloudant
+
+When should NoSQL be used:
+1. When huge amount of data need to be stored and retrieved .
+2. The relationship between the data you store is not that important
+3. The data changing over time and is not structured.
+4. Support of Constraints and Joins is not required at database level
+5. The data is growing continuously and you need to scale the database regular to handle the data.
+
+
+#2. MongoDB:  The most popular NoSQL database, is an open-source document-oriented database. The term ‘NoSQL’ means ‘non-relational’. It means that MongoDB isn’t based 
+    on the table-like relational database structure but provides an altogether different mechanism for storage and retrieval of data. 
+	This format of storage is called BSON ( similar to JSON format).
+	{
+  title: 'Geeksforgeeks',
+  by: 'Harshit Gupta',
+  url: 'https://www.geeksforgeeks.org',
+  type: 'NoSQL'
+} 
+Relational Database Management System(RDBMS) is not the correct choice when it comes to handling big data by the virtue of their design since they are not horizontally scalable
+NoSQL databases are more scalable and provide superior performance. MongoDB is such a NoSQL database that scales by adding more and more servers and increases productivity 
+with its flexible document model.
+---Features of MongoDB:  Document Oriented,Indexing, Scalability,Replication and High Availability and Aggregation
+
+--Where do we use MongoDB?
+1. Big Data: If you have huge amount of data to be stored in tables, think of MongoDB before RDBMS databases. MongoDB has built-in solution for partitioning and sharding your database.
+2. Unstable Schema: Adding a new column in RDBMS is hard whereas MongoDB is schema-less. Adding a new field does not effect old documents and will be very easy.
+3. Distributed data Since multiple copies of data are stored across different servers, recovery of data is instant and safe even if there is a hardware failure.
+
+
+
+#3. Caasandra:  is a distributed database management system which is open source with wide column store, NoSQL database to handle large amount of data across many commodity 
+servers which provides high availability with no single point of failure. Apache Cassandra is used to manage very large amounts of structure data spread out across the world. 
+It provides highly available service with no single point of failure. Listed below are some points of Apache Cassandra:
+
+1. It is scalable, fault-tolerant, and consistent.
+2. It is column-oriented database.
+3. Its distributed design is based on Amazon’s Dynamo and its data model on Google’s Big table.
+4. It is Created at Facebook and it differs sharply from relational database management systems.
+The design goal of a Cassandra is to handle big data workloads across multiple nodes without any single point of failure. Cassandra has
+peer-to-peer distributed system across its nodes, and data is distributed among all the nodes of the cluster.
+
+
+#4. HBase: is a data model that is similar to Google’s big table. It is an open source, distributed database developed by Apache software 
+    foundation written in Java. HBase is an essential part of our Hadoop ecosystem. HBase runs on top of HDFS (Hadoop Distributed File System). 
+	It can store massive amounts of data from terabytes to petabytes. It is column oriented and horizontally scalable
+	
+	Features of HBase – 
+	1. It is linearly scalable across various nodes as well as modularly scalable, as it divided across various nodes. 
+	2. HBase provides consistent read and writes. 
+	3. It provides atomic read and write means during one read or write process, all other processes are prevented from performing any read or write operations. 
+	4. It provides easy to use Java API for client access. 
+	5. It supports Thrift and REST API for non-Java front ends which supports XML, Protobuf and binary data encoding options. 
+	6. It supports a Block Cache and Bloom Filters for real-time queries and for high volume query optimization. 
+	7. HBase provides automatic failure support between Region Servers. 
+	8. It support for exporting metrics with the Hadoop metrics subsystem to files. 
+	9. It doesn’t enforce relationship within your data. 
+	10. It is a platform for storing and retrieving data with random access. 
+	
+	RDBMS Vs HBase – 
+	1. RDBMS is mostly Row Oriented whereas HBase is Column Oriented. 
+	2. RDBMS has fixed schema but in HBase we can scale or add columns in run time also. 
+	3. RDBMS is good for structured data whereas HBase is good for semi-structured data. 
+	4. RDBMS is optimized for joins but HBase is not optimized for joins.
+
+#5. Memcached: Memcached is a simple, open-source, in-memory caching system that can be used as a temporary in-memory data storage. 
+    The stored data in memory has high read and write performance and distributes data into multiple servers. 
+	It is a key-value of string object that is stored in memory and the API is available for all the languages. Memcached is very efficient for websites. 
+
+#6. Redis: Redis is an open-source, key-value, NoSQL database. It is an in-memory data structure that stores all the data served from memory and uses disk for storage. 
+     It offers a unique data model and high performance that supports various data structures like string, list, sets, hash, which it uses as a database 
+	 cache or message broker. It is also called Data Structure Server. It does not support schema RDBMS, SQL, or ACID transactions. 
+
+#7. Hadoop Distributed File System(HDFS):   HDFS (Hadoop Distributed File System) is a unique design that provides storage for extremely large files with streaming data access pattern 
+and it runs on commodity hardware.
+     1. Extremely large files: Here we are talking about the data in range of petabytes(1000 TB).
+     2. Streaming Data Access Pattern: HDFS is designed on principle of write-once and read-many-times. Once data is written large portions of dataset can be processed any number times.
+     3. Commodity hardware: Hardware that is inexpensive and easily available in the market. This is one of feature which specially distinguishes HDFS from other file system.
+	Nodes: Master-slave nodes typically forms the HDFS cluster.
+	
+	MasterNode: 
+    Manages all the slave nodes and assign work to them.
+    It executes filesystem namespace operations like opening, closing, renaming files and directories.
+    It should be deployed on reliable hardware which has the high config. not on commodity hardware.
+
+    NameNode: 
+    Actual worker nodes, who do the actual work like reading, writing, processing etc.
+    They also perform creation, deletion, and replication upon instruction from the master.
+    They can be deployed on commodity hardware.
+    
+	HDFS daemons: Daemons are the processes running in background. 
+   Namenodes: 
+   1. Run on the master node.
+   2. Store metadata (data about data) like file path, the number of blocks, block Ids. etc.
+   3. Require high amount of RAM.
+   4. Store meta-data in RAM for fast retrieval i.e to reduce seek time. Though a persistent copy of it is kept on disk.
+   
+  DataNodes: 
+  1. Run on slave nodes.
+  2. Require high memory as data is actually stored here.
+
+
+#8.  Spark
+1. Apache spark can use to perform batch processing.
+2. Apache spark can also use to perform stream processing. For stream processing, we were using Apache Storm / S4.
+3. It can be used for interactive processing. Previously we were using Apache Impala or Apache Tez for interactive processing.
+4. Spark is also useful to perform graph processing. Neo4j / Apache Graph was using for graph processing.
+5. Spark can process the data in real-time and batch mode.
+So, we can say that Spark is a powerful open-source engine for data processing.
+
+
+8. Kafka: Apache Kafka is a publish-subscribe messaging system. A messaging system let you send messages between processes, applications, 
+   and servers.Applications may connect to this system and transfer a message onto the topic. A message can include any kind of information ,from any event on your Personal 
+   blog or can be a very simple text message that would trigger any other event.A Kafka cluster usually consists of one or more servers (called as kafka brokers),
+   which are running Kafka over them. Producers are processes that publish data (push messages over trigger) into Kafka topics within the specified broker.
+   A consumer of topics pulls messages off a Kafka topic.
+   
+  #Apache Kafka and Important Server concepts
+  1. Topic partition: Kafka topics are divided into a number of partitions, which allows you to split data across multiple brokers.
+  2. Consumer Group: A consumer group includes the set of consumer processes that are subscribing to a specific topic.
+  3. Node: A node is a single computer in the Apache Kafka cluster.
+  4. Replicas: A replica of a partition is a “backup” of a partition. Replicas never read or write data. They are used to prevent data loss.
+  5. Producer: Application that sends the messages.
+  6. Consumer: Application that receives the messages.
+  
+  Real time Applications: Twitter, Netflix and Box
+
+
+9. Monolithic Architecture is like a big container, wherein all the software components of an app are assembled and tightly coupled, i.e., each component fully depends on each other.
+As you can see in the example all the services provided by the application (Customer Services, Cost Services, Product Services) are directly connected. So if we want to change in code or something 
+we have to change in all the services as well.
+
+#Disadvantage:
+Large and Complex Applications:
+For large and complex application in monolithic, it is difficult for maintenance because they are dependent on each other.
+Slow Development:
+It is because, for modify an application we have to redeploy whole application instead of updates part. It takes more time or slow development.
+Unscalable:
+Each copy of the application will access the hole data which make more memory consumption. We cannot scale each component independently.
+Unreliable:
+If one services goes down, then it affects all the services provided by the application. It is because all services of applications are connected to each other.
+Inflexible:
+Really difficult to adopt new technology.It is because we have to change hole application technology.
+
+
+9.1 High Level Design is the general system design means it refers to the overall system design.	Low Level Design is like detailing HLD means it refers to component-level design process.
+9.2  It is also known as macro level/system design.	It is also known as micro level/detailed design.
+9.3 It describes the overall description/architecture of the application.	It describes detailed description of each and every module
+9.4 It is created by solution architect.	It is created by designers and developers.
+9.5 High Level Design is created first means before Low Level Design.	Low Level Design is created second means after High Level Design.
+9.6  In HLD the output criteria is data base design, functional design and review record.	In LLD the output criteria is program specification and unit test plan.
